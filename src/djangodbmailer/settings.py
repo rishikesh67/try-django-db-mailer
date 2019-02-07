@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # Added
     'django.contrib.sites',
     'dbmail'
 ]
@@ -132,5 +133,33 @@ STATICFILES_DIRS = [
     ('docs', os.path.join(BASE_DIR, "static", "docs"))
 ]
 
+# MAIL SETTINGS
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'noreply@gmail.com'
+# EMAIL_HOST_PASSWORD = 'your-password'
+# EMAIL_USE_TLS = True
+# DEFAULT_FROM_EMAIL = 'User <noreply@gmail.com>'
 
 # DJANGO DB MAILER (SETTINGS)
+# settings.py
+CACHES = {
+    # Memcached
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.PyLibMCCache',
+    }
+
+    # # or Redis
+    # "default": {
+    #     'BACKEND': 'redis_cache.cache.RedisCache',
+    #     'LOCATION': '127.0.0.1:6379:2',
+    # },
+    # # or Memory
+    # "default": {
+    #     'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+    #     'LOCATION': 'unique-snowflake'
+    # },
+}
+
+
+
